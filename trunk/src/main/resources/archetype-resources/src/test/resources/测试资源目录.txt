@@ -1,0 +1,4 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+这个目录下的资源文件，在打包时会被忽略。

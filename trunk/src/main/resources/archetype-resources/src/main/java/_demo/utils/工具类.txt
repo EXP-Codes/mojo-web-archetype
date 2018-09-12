@@ -1,0 +1,11 @@
+com.catt.ASDEWW.pub    KTJSDP功能包
+com.catt.ASDEWW.util	KTJSDP工具包
+com.catt.ASDEWW.frame	凯通框架包
+com.catt.ASDEWW.zhwg	综合网管开发包
+
+demo.conf  		XML配置读取操作类包
+demo.dao		数据库操作类包
+demo.entity		实体类包
+demo.services	业务功能类包
+demo.common		公共属性变量定义包
+demo.util		工具类包

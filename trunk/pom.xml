@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--项目基本信息(必填)-->
+	<groupId>exp.libs</groupId>
+	<artifactId>mojo-web-archetype</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>maven-archetype</packaging>
+
+	<name>经验库-骨架-WEB版</name>
+	<description>用于快速构建WEB项目的程序框架</description>
+	<url>https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/trunk</url>
+
+	<!-- 软件配置管理 -->
+	<scm>
+		<connection>scm:svn:https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/trunk</connection>
+		<developerConnection>scm:svn:https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/trunk</developerConnection>
+		<url>scm:svn:https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/trunk</url>
+	</scm>
+	
+	<!-- 变量定义 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>
+	</properties>
+	
+	<!-- 项目构建 -->
+	<build>
+		<plugins>
+
+			<!-- 指定项目JDK版本 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
+			
+			<!-- 版本打包插件，在dos跳转到项目根目录，依次执行（需保证没有引用快照、本地与SVN服务器内容完全一致）: 
+				1 发布基线到svn: mvn release:prepare 
+				2 发布引用到私服 : mvn release:perform -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<tagBase>https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/tags</tagBase>
+				</configuration>
+			</plugin>
+			
+			<!-- 打包javadoc: 项目发布基线版本时会自动打包javadoc，若报错不要启用此插件 -->
+            <!-- javadoc插件会强制使用GBK读取pom文件的内容, 若得到的html网页标题乱码,  -->
+            <!-- 则需要通过Run Configurations -> 自定义Maven install命令 -> Common -> Encoding:GBK 确保不会乱码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+               		<aggregate>true</aggregate>
+                	<charset>UTF-8</charset>
+                	<encoding>UTF-8</encoding>
+                	<docencoding>UTF-8</docencoding>
+                	<outputEncondig>UTF-8</outputEncondig>
+                	<skip>false</skip>	<!-- 是否在项目打包时跳过javadoc -->
+                </configuration>
+                <executions>
+                    <execution>
+			            <id>attach-javadocs</id>
+			            <phase>install</phase>
+			            <goals>
+			                <goal>jar</goal>
+			            </goals>
+			        </execution>
+                </executions>
+            </plugin>
+            
+		</plugins>
+
+		<!-- Maven骨架打包插件 -->
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.archetype</groupId>
+				<artifactId>archetype-packaging</artifactId>
+				<version>2.2</version>
+			</extension>
+		</extensions>
+
+		<!-- Maven骨架管理插件 -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-archetype-plugin</artifactId>
+					<version>2.2</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+	<!-- 项目发布管理 -->
+	<distributionManagement>
+	
+		<!-- 私服地址 ，基线仓库 -->
+		<repository>
+			<id>Releases</id>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
+		</repository>
+		
+		<!-- 私服地址 ，快照仓库 -->
+		<snapshotRepository>
+			<id>Snapshots</id>
+			<url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
