@@ -20,7 +20,7 @@ import ${package}._demo.Config;
  * 此demo与 spring-mvc.xml 配置文件配套
  */
 @Controller
-public class AnnotationController extends AbstractController{
+public class AnnotationController extends AbstractController {
 
 	private final static Logger log = LoggerFactory.getLogger(AnnotationController.class);
 	
