@@ -50,32 +50,6 @@
 					<tagBase>https://github.com/lyy289065406/expcodes/trunk/java/01-framework/mojo-web-archetype/tags</tagBase>
 				</configuration>
 			</plugin>
-			
-			<!-- 打包javadoc: 项目发布基线版本时会自动打包javadoc，若报错不要启用此插件 -->
-            <!-- javadoc插件会强制使用GBK读取pom文件的内容, 若得到的html网页标题乱码,  -->
-            <!-- 则需要通过Run Configurations -> 自定义Maven install命令 -> Common -> Encoding:GBK 确保不会乱码 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-               		<aggregate>true</aggregate>
-                	<charset>UTF-8</charset>
-                	<encoding>UTF-8</encoding>
-                	<docencoding>UTF-8</docencoding>
-                	<outputEncondig>UTF-8</outputEncondig>
-                	<skip>false</skip>	<!-- 是否在项目打包时跳过javadoc -->
-                </configuration>
-                <executions>
-                    <execution>
-			            <id>attach-javadocs</id>
-			            <phase>install</phase>
-			            <goals>
-			                <goal>jar</goal>
-			            </goals>
-			        </execution>
-                </executions>
-            </plugin>
-            
 		</plugins>
 
 		<!-- Maven骨架打包插件 -->
