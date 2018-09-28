@@ -111,6 +111,13 @@
             <version>1.2</version>
         </dependency>
         
+        <dependency>
+            <groupId>javax.servlet.jsp.jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <classifier>sources</classifier>
+        </dependency>
+        
         <!-- 把Spring源代码中使用到的commons-logging替换成slf4j -->
         <dependency>  
           <groupId>org.slf4j</groupId>  
