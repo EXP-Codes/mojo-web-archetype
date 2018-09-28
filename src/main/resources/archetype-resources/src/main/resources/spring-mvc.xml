@@ -17,21 +17,7 @@
         http://www.springframework.org/schema/aop 
         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" 
         default-lazy-init="true">
-    
-    <!-- ========================================================================================= -->
-    
-    <!-- 视图解析器 viewResolver : 用于支持Servlet、JSP视图解析 -->
-    <!-- viewClass: JstlView表示JSP模板页面需要使用JSTL标签库, classpath中必须包含jstl的相关jar包 -->
-    <!-- prefix和suffix: 查找视图页面的前缀和后缀（格式为: 前缀[逻辑视图名]后缀） 
-                        ,如传进来的逻辑视图名为"demo",则该视图页面应该存放在"/WEB-INF/pages/demo.jsp" -->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/pages/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
 
-    <!-- ========================================================================================= -->
-    
     
     <!-- 基于注解方式配置的Controller -->
     
