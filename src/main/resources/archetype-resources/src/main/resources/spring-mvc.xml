@@ -25,9 +25,13 @@
     <!-- 开启注解  -->
     <mvc:annotation-driven />
     
-    <!-- 在注解模式下, 会自动装在这两个处理映射器和适配器, 因此无需配置 -->
+    <!-- 在注解模式下, 会自动装在这两个处理映射器和适配器, 因此无需配置： -->
     <!-- bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/  -->
     <!-- bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/ -->
+    <!-- 在spring 3.1版本后，这两个处理映射器和适配器变更为： -->
+    <!-- bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/  -->
+    <!-- bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/ -->
+    
     
     <!--启用自动扫描(扫描包目录)  -->
     <context:component-scan base-package="${package}._demo.web.ctrl" />
