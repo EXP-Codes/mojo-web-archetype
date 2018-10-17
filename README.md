@@ -4,6 +4,9 @@ Maven项目规范骨架（Web版）
 ------
 
 
+DEMO项目版本信息是1.0
+
+
 ## 运行环境
 
 　![](https://img.shields.io/badge/Maven-3.2.5%2B-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
@@ -13,12 +16,13 @@ Maven项目规范骨架（Web版）
 
 　快速创建一个规范架构的**Java Web项目（Maven版）**，使得**项目中自动内置**：
 
+- **Spring/SpringMVC架构**
 - [经验构件库](https://github.com/lyy289065406/exp-libs)：*用于快速开发的辅助包*
 - [Maven项目发布插件](https://github.com/lyy289065406/mojo-release-plugin)：*用于快速发布一个可运行应用到生产环境*
 - 混淆打包插件：*第三方插件`proguard-maven-plugin`，用于保护所发布的项目代码*
 - Ant插件：*第三方插件`maven-antrun-plugin`，用于拷贝项目配置、文档等资源到发布包*
 - 基线发布插件：*第三方插件`maven-release-plugin`，用于发布项目基线到版本库和Nexus私服*
-- **Spring/SpringMVC架构**
+
 
 
 > 此骨架只能在J2EE中使用，若在J2SE中，会因为缺少Java Web组件会报错
@@ -45,13 +49,13 @@ Maven项目规范骨架（Web版）
 - 03.　通过 `maven install` 命令安装骨架到本地 Maven Repository
 - 04.　（可选）若本地部署了 Nexus 私服，可通过 `maven deploy` 命令直接发布骨架到私服
 - 05.　新建Maven项目，并选择此骨架进行项目构件：<br/>
-![新建Maven项目](https://raw.githubusercontent.com/lyy289065406/mojo-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/01-%E9%80%89%E6%8B%A9Maven%E9%AA%A8%E6%9E%B6.png)
+![新建Maven项目](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/01-%E9%80%89%E6%8B%A9Maven%E9%AA%A8%E6%9E%B6.png)
 - 06.　填写项目必要信息：<br/>
-![填写项目必要信息](https://raw.githubusercontent.com/lyy289065406/mojo-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/02-%E5%A1%AB%E5%86%99%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF.png)
+![填写项目必要信息](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/02-%E5%A1%AB%E5%86%99%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF.png)
 - 07.　通过骨架所生成的项目，项目中会引用到 [`构件经验库 exp-libs`](https://github.com/lyy289065406/exp-libs) 的一些功能：<br/>
-![通过骨架所生成的项目](https://raw.githubusercontent.com/lyy289065406/mojo-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/03-%E7%94%9F%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF.png)
+![通过骨架所生成的项目](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/03-%E7%94%9F%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF.png)
 - 08.　通过 `maven install` 在 `target` 目录直接发布可运行应用（详见[`Maven项目发布插件 mojo-release-plugin`](https://github.com/lyy289065406/mojo-release-plugin)）：<br/>
-![发布可运行项目到生产环境](https://raw.githubusercontent.com/lyy289065406/mojo-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/04-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE.png)
+![发布可运行项目到生产环境](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/04-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE.png)
 
 
 ## 补充：通过本骨架所生成示例项目的pom.xml文件
