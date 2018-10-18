@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <spring.version>3.1.2.RELEASE</spring.version>
-        <explibs.version>1.0-SNAPSHOT</explibs.version>
+        <explibs.version>1.0</explibs.version>
     </properties>
 
 
@@ -216,13 +216,13 @@
         <!-- 私服地址 ，公司级基线仓库 -->
         <repository>
             <id>Releases</id>
-            <url>http://172.168.10.100:8081/nexus/content/repositories/releases</url>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
         </repository>
 
         <!-- 私服地址 ，公司级快照仓库 -->
         <snapshotRepository>
             <id>Snapshots</id>
-            <url>http://172.168.10.100:8081/nexus/content/repositories/snapshots</url>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 

@@ -29,10 +29,10 @@ public class ClassNameController implements Controller {
 		// ---------------------------------------------------
     	// TODO 业务逻辑
     	System.out.println("ClassNameController Working.");
-    	log.debug("SimpleUrlController Work In: {}", "DEBUG");
-    	log.info("SimpleUrlController Work In: {}", "INFO");
-    	log.warn("SimpleUrlController Work In: {}", "WARN");
-    	log.error("SimpleUrlController Work In: {}", "ERROR");
+    	log.debug("ClassNameController Work In: {}", "DEBUG");
+    	log.info("ClassNameController Work In: {}", "INFO");
+    	log.warn("ClassNameController Work In: {}", "WARN");
+    	log.error("ClassNameController Work In: {}", "ERROR");
     	// ---------------------------------------------------
     	
     	

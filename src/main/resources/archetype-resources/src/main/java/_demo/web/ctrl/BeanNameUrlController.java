@@ -29,10 +29,10 @@ public class BeanNameUrlController implements Controller {
 		// ---------------------------------------------------
     	// TODO 业务逻辑
     	System.out.println("BeanNameUrlController Working.");
-    	log.debug("SimpleUrlController Work In: {}", "DEBUG");
-    	log.info("SimpleUrlController Work In: {}", "INFO");
-    	log.warn("SimpleUrlController Work In: {}", "WARN");
-    	log.error("SimpleUrlController Work In: {}", "ERROR");
+    	log.debug("BeanNameUrlController Work In: {}", "DEBUG");
+    	log.info("BeanNameUrlController Work In: {}", "INFO");
+    	log.warn("BeanNameUrlController Work In: {}", "WARN");
+    	log.error("BeanNameUrlController Work In: {}", "ERROR");
     	// ---------------------------------------------------
     	
     	
