@@ -292,7 +292,8 @@ Maven项目规范骨架（Web版）
 
 </project>
 
-```<br/>
+```
+
 - **web.xml**<br/>
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
