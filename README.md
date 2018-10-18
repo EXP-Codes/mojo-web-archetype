@@ -58,11 +58,12 @@ Maven项目规范骨架（Web版）
 。。。
 
 
-## 补充：通过本骨架所生成示例项目的pom.xml文件
+## 补充：通过本骨架所生成示例项目的 pom.xml 与 web.xml 文件
 
 > 点击 [这里](https://github-production-release-asset-2e65be.s3.amazonaws.com/148517307/39b98c00-d16a-11e8-8e29-21fb4ca9a0c1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20181016%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20181016T094123Z&X-Amz-Expires=300&X-Amz-Signature=badf0120ecd88889e126c25c9a84abb7d9a34a4eed2c25f2760536c5788f57f5&X-Amz-SignedHeaders=host&actor_id=17040287&response-content-disposition=attachment%3B%20filename%3Ddemo-archetype.zip&response-content-type=application%2Foctet-stream) 下载示例项目
 
 
+- **pom.xml**<br/>
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -104,7 +105,7 @@ Maven项目规范骨架（Web版）
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.6</jdk.version>
         <spring.version>3.1.2.RELEASE</spring.version>
-        <explibs.version>1.0-SNAPSHOT</explibs.version>
+        <explibs.version>1.0</explibs.version>
     </properties>
 
 
@@ -279,19 +280,114 @@ Maven项目规范骨架（Web版）
         <!-- 私服地址 ，公司级基线仓库 -->
         <repository>
             <id>Releases</id>
-            <url>http://172.168.10.100:8081/nexus/content/repositories/releases</url>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/releases</url>
         </repository>
 
         <!-- 私服地址 ，公司级快照仓库 -->
         <snapshotRepository>
             <id>Snapshots</id>
-            <url>http://172.168.10.100:8081/nexus/content/repositories/snapshots</url>
+            <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
 </project>
 
+```<br/>
+- **web.xml**<br/>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    id="WebApp_ID" version="3.0">
+
+    <!-- web-app显示名称 -->
+    <display-name>demo-web-archetype</display-name>
+
+
+    <!-- 默认首页 -->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+
+    <!-- 字符集过滤器 : 处理页面乱码问题 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+    <!-- 加载logback日志配置 -->
+    <context-param>  
+        <param-name>logbackConfigLocation</param-name>  
+        <param-value>classpath:logback.xml</param-value>  
+    </context-param>  
+    <listener>  
+        <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>  
+    </listener>  
+    
+
+    <!-- 表示工程默认以spring的方式启动 -->
+    <!-- 注：这是[非SpringMVC]架构的配置, 若希望直接使用SpringMVC, 则无视此配置项即可 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <context-param>     <!-- 指定spring配置文件(若无指定则启动时默认会在/WEB-INF目录下查找applicationContext.xml) -->
+        <param-name>contextConfigLocation</param-name>
+        <param-value>   <!-- classpath指代WEB-INF下的classes与lib目录, 优先级lib大于classes -->
+          classpath*:applicationContext*.xml    <!-- 这是全局的, 应用于多个servlet -->
+        </param-value>
+    </context-param>
+    
+
+    <!-- 使得工程具备SpringMVC特性 -->
+    <servlet>
+        <servlet-name>SpringMVC</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+
+        <!-- 指定配置文件(若不配置则默认在/WEB-INF目录下查找XXX-servlet.xml作为配置文件) -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>      <!-- 仅仅SpringMVC使用的配置文件, 四选一即可 -->
+                 <!-- classpath*:spring-bean.xml -->    <!-- 基于BeanName-URL方式配置的Controller --> 
+                 <!-- classpath*:spring-class.xml -->   <!-- 基于ClassName方式配置的Controller --> 
+                 classpath*:spring-mvc.xml              <!-- 基于注解方式配置的Controller --> 
+                 <!-- classpath*:spring-url.xml -->     <!-- 基于Simple-URL方式配置的Controller --> 
+            </param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>    <!-- 表示启动容器时初始化该Servlet -->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SpringMVC</servlet-name>  <!-- 表示哪些请求交给SpringMVC处理, "/"表示此为其他servlet都匹配不到时的缺省模式 -->
+        <url-pattern>/</url-pattern>    <!-- 可以配置为诸如"*.html"表示拦截所有以html为扩展名的请求 -->
+    </servlet-mapping>
+
+
+    <!-- 用于测试demo中的SpringMVC跳转(可删除) -->
+    <servlet>
+        <servlet-name>TestSpringMVC</servlet-name>
+        <jsp-file>/WEB-INF/pages/demo-mvc-request.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestSpringMVC</servlet-name>
+        <url-pattern>/demo-spring-mvc</url-pattern>
+    </servlet-mapping>
+    
+</web-app>
+
 ```
+
 
 ## 版权声明
 
