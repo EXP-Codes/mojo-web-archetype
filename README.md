@@ -4,9 +4,6 @@ Maven项目规范骨架（Web版）
 ------
 
 
-DEMO项目版本信息是1.0
-
-
 ## 运行环境
 
 　![](https://img.shields.io/badge/Maven-3.2.5%2B-brightgreen.svg)  ![](https://img.shields.io/badge/JDK-1.7%2B-brightgreen.svg)
