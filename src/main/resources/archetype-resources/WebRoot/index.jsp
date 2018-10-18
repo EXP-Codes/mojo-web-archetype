@@ -8,5 +8,10 @@
 </head>
 <body>
     <a href="demo-spring-mvc">SpringMVC - 测试</a>
+    
+    <div style="width:100%; position:fixed; left:0; bottom:0;">
+        <hr/>
+        <p>Copyright(C) By EXP - <a href="http://www.exp-blog.com">http://www.exp-blog.com</a></p>
+    </div>
 </body>
 </html>
