@@ -60,7 +60,7 @@ Maven项目规范骨架（Web版）
 > 在 web.xml 切换 spring 配置文件可测试不同的控制器效果
 
 
-![运行效果](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/04-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE.png)
+![运行效果](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/05-%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png)
 
 
 ## 补充：通过本骨架所生成示例项目的 pom.xml 与 web.xml 文件
