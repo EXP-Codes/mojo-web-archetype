@@ -69,7 +69,7 @@ Maven项目规范骨架（Web版）
 
 ## 补充：通过本骨架所生成示例项目的 pom.xml 与 web.xml 文件
 
-> 点击 [这里](https://github-production-release-asset-2e65be.s3.amazonaws.com/148517307/39b98c00-d16a-11e8-8e29-21fb4ca9a0c1?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20181016%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20181016T094123Z&X-Amz-Expires=300&X-Amz-Signature=badf0120ecd88889e126c25c9a84abb7d9a34a4eed2c25f2760536c5788f57f5&X-Amz-SignedHeaders=host&actor_id=17040287&response-content-disposition=attachment%3B%20filename%3Ddemo-archetype.zip&response-content-type=application%2Foctet-stream) 下载示例项目
+> 点击 [这里](https://github-production-release-asset-2e65be.s3.amazonaws.com/148517374/e2d0c580-d2d5-11e8-8a97-a6ea0726b95d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20181018%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20181018T071339Z&X-Amz-Expires=300&X-Amz-Signature=b5eeaead55a227cead3d6fc4a7b92d8ab57a300a5aa0a3f6825132c84d3a7403&X-Amz-SignedHeaders=host&actor_id=17040287&response-content-disposition=attachment%3B%20filename%3Ddemo-web-archetype.war&response-content-type=application%2Foctet-stream) 下载示例项目
 
 
 - **pom.xml**<br/>
