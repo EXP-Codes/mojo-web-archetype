@@ -16,11 +16,10 @@ Maven项目规范骨架（Web版）
 - **Spring/SpringMVC架构**
 - [经验构件库](https://github.com/lyy289065406/exp-libs)：*用于快速开发的辅助包*
 - war项目发布插件：*第三方插件`maven-war-plugin`，用于快速发布一个可运行应用到生产环境*
-- 基线发布插件：*第三方插件`maven-release-plugin`，用于发布项目基线到版本库和Nexus私服*
+- 基线发布插件：*第三方插件`maven-release-plugin`，用于发布项目基线到版本库和 Nexus私服*
 
 
-
-> 此骨架只能在J2EE中使用，若在J2SE中，会因为缺少Java Web组件会报错
+> 注：此骨架只能在J2EE中使用，若在J2SE中，会因为缺少Java Web组件会报错
 
 ## 使用说明
 
@@ -57,7 +56,7 @@ Maven项目规范骨架（Web版）
 
 　通过 `Run on Server` 方式可在 Eclipse 中直接运行项目（当然把war包放到tomcat运行也是可以的）：
 
-> 在 web.xml 切换 spring 配置文件可测试不同的控制器效果
+> 注：在 web.xml 切换 spring 配置文件可测试不同的控制器效果
 
 
 ![运行效果](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/05-%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C.png)
