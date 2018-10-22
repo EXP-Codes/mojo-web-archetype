@@ -24,7 +24,7 @@ Maven项目规范骨架（Web版）
 - 基线发布插件：*第三方插件`maven-release-plugin`，用于发布项目基线到版本库和 Nexus私服*
 
 
-> 注：此骨架只能在J2EE中使用，若在J2SE中，会因为缺少Java Web组件会报错
+> 注：此骨架只能在J2EE中使用，若在J2SE中，会因为缺少Java Web组件而报错
 
 ## 使用说明
 
@@ -51,7 +51,7 @@ Maven项目规范骨架（Web版）
 ![新建Maven项目](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/01-%E9%80%89%E6%8B%A9Maven%E9%AA%A8%E6%9E%B6.png)
 - 06.　填写项目必要信息：<br/>
 ![填写项目必要信息](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/02-%E5%A1%AB%E5%86%99%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF.png)
-- 07.　通过骨架所生成的项目，项目中会引用到 [`构件经验库 exp-libs`](https://github.com/lyy289065406/exp-libs) 的一些功能：<br/>
+- 07.　通过骨架所生成的项目，项目中会引用到 [`构件经验库 exp-libs`](https://github.com/lyy289065406/exp-libs) 的一些功能，其组织结构如下：<br/>
 ![通过骨架所生成的项目](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/03-%E7%94%9F%E6%88%90%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%A8%A1%E6%9D%BF.png)
 - 08.　通过 `maven install` 在 `target` 目录直接发布war包（拷贝到tomcat即可运行）：<br/>
 ![发布可运行项目到生产环境](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/04-%E5%8F%91%E5%B8%83%E9%A1%B9%E7%9B%AE.png)
