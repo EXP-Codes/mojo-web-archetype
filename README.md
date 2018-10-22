@@ -47,7 +47,7 @@ Maven项目规范骨架（Web版）
 ```
 - 03.　通过 `maven install` 命令安装骨架到本地 Maven Repository
 - 04.　（可选）若本地部署了 Nexus 私服，可通过 `maven deploy` 命令直接发布骨架到私服
-- 05.　新建Maven项目，并选择此骨架进行项目构件：<br/>
+- 05.　新建Maven项目，并选择此骨架进行项目构建：<br/>
 ![新建Maven项目](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/01-%E9%80%89%E6%8B%A9Maven%E9%AA%A8%E6%9E%B6.png)
 - 06.　填写项目必要信息：<br/>
 ![填写项目必要信息](https://raw.githubusercontent.com/lyy289065406/mojo-web-archetype/master/doc/%E6%95%88%E6%9E%9C%E6%88%AA%E5%9B%BE/02-%E5%A1%AB%E5%86%99%E9%A1%B9%E7%9B%AE%E4%BF%A1%E6%81%AF.png)
